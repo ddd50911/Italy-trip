@@ -24,6 +24,7 @@ const dayTripOptions = [
         id: "bergamo",
         title: "貝加莫 (Bergamo)",
         image: "assets/bergamo.png",
+        suggestedDuration: "建議停留時間：4-6 小時",
         description: `
             <p><strong>貝加莫 (Bergamo)</strong> 是一座擁有雙重面貌的城市：山丘上的<strong>上城 (Città Alta)</strong> 保留著中世紀的風貌，被威尼斯城牆環繞；山下的<strong>下城 (Città Bassa)</strong> 則充滿現代活力。</p>
             <ul>
@@ -43,6 +44,7 @@ const dayTripOptions = [
         id: "como",
         title: "科莫湖 (Lake Como)",
         image: "assets/como.png",
+        suggestedDuration: "建議停留時間：6-8 小時",
         description: `
             <p><strong>科莫湖 (Lake Como)</strong> 是義大利最著名的湖泊之一，以其壯麗的阿爾卑斯山景緻和豪華別墅而聞名。這裡是遠離城市喧囂、享受寧靜的絕佳去處。</p>
             <ul>
@@ -61,6 +63,7 @@ const dayTripOptions = [
         id: "brescia",
         title: "布雷西亞 (Brescia)",
         image: "assets/brescia.png",
+        suggestedDuration: "建議停留時間：4-5 小時",
         description: `
             <p><strong>布雷西亞 (Brescia)</strong> 擁有義大利北部最大的羅馬遺址區，是一座歷史底蘊深厚的城市，也是重要的工業中心。</p>
             <ul>
@@ -79,6 +82,7 @@ const dayTripOptions = [
         id: "genova",
         title: "熱那亞 (Genova)",
         image: "assets/genova.png",
+        suggestedDuration: "建議停留時間：6-8 小時",
         description: `
             <p><strong>熱那亞 (Genova)</strong> 是義大利最大的海港，擁有迷宮般的窄巷 (Caruggi) 和宏偉的宮殿。這裡是哥倫布的故鄉，也是青醬 (Pesto) 的發源地。</p>
             <ul>
@@ -98,6 +102,7 @@ const dayTripOptions = [
         id: "torino",
         title: "都靈 (Torino)",
         image: "assets/torino.png",
+        suggestedDuration: "建議停留時間：6-8 小時",
         description: `
             <p><strong>都靈 (Torino)</strong> 是義大利統一後的第一個首都，以優雅的巴洛克建築、林蔭大道和壯麗的阿爾卑斯山背景而聞名。這裡也是菲亞特汽車和 Lavazza 咖啡的故鄉。</p>
             <ul>
@@ -116,6 +121,7 @@ const dayTripOptions = [
         id: "bologna",
         title: "博洛尼亞 (Bologna)",
         image: "assets/bologna.png",
+        suggestedDuration: "建議停留時間：6-8 小時",
         description: `
             <p><strong>博洛尼亞 (Bologna)</strong> 被稱為「胖子之都」(La Grassa)，是義大利的美食中心。它還擁有世界上最古老的大學和獨特的紅色屋頂景觀。</p>
             <ul>
@@ -135,6 +141,7 @@ const dayTripOptions = [
         id: "cremona",
         title: "克雷莫納 (Cremona)",
         image: "assets/cremona.png",
+        suggestedDuration: "建議停留時間：4-5 小時",
         description: `
             <p><strong>克雷莫納 (Cremona)</strong> 是世界著名的小提琴之都，斯特拉迪瓦里 (Stradivari) 等製琴大師皆誕生於此。</p>
             <ul>
@@ -153,6 +160,7 @@ const dayTripOptions = [
         id: "pavia",
         title: "帕維亞 (Pavia)",
         image: "assets/pavia.png",
+        suggestedDuration: "建議停留時間：3-4 小時",
         description: `
             <p><strong>帕維亞 (Pavia)</strong> 曾是倫巴第王國的首都，擁有一座歷史悠久的大學和著名的修道院。</p>
             <ul>
@@ -171,6 +179,7 @@ const dayTripOptions = [
         id: "verona",
         title: "維羅納 (Verona)",
         image: "assets/verona.png",
+        suggestedDuration: "建議停留時間：6-8 小時",
         description: `
             <p><strong>維羅納 (Verona)</strong> 是羅密歐與茱麗葉的故鄉，以其保存完好的羅馬圓形競技場而聞名，是一座充滿浪漫氣息的城市。</p>
             <ul>
@@ -213,6 +222,7 @@ function openModal(id) {
     if (!data) return;
 
     document.getElementById("modal-title").innerText = data.title;
+    document.getElementById("modal-duration").innerText = data.suggestedDuration || "";
     document.getElementById("modal-body").innerHTML = data.description;
 
     // Set Image
@@ -267,9 +277,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Render Options
     dayTripOptions.forEach(option => {
         const div = document.createElement('div');
-        div.className = 'option-item';
-        div.textContent = option.title; // Use option.title instead of option.nameZh
-        div.addEventListener('click', () => openModal(option.id)); // Pass option.id
+        div.className = 'option-card fade-in-up'; // Changed class to option-card
+
+        div.innerHTML = `
+            <div class="option-image-container">
+                <img src="${option.image}" alt="${option.title}" loading="lazy">
+            </div>
+            <div class="option-content">
+                <h4>${option.title}</h4>
+                <p class="option-duration">${option.suggestedDuration}</p>
+            </div>
+        `;
+
+        div.addEventListener('click', () => openModal(option.id));
         optionsContainer.appendChild(div);
     });
 });

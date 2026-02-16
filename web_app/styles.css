@@ -292,29 +292,68 @@ footer {
 /* Options Grid */
 .options-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
     margin-top: 2rem;
 }
 
-.option-item {
+.option-card {
     background: white;
-    padding: 1.5rem;
     border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid #eee;
-    font-family: var(--font-heading);
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    transition: all 0.2s;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
 }
 
-.option-item:hover {
-    background: var(--accent-color);
-    color: white;
-    transform: scale(1.05);
+.option-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.option-image-container {
+    height: 180px;
+    overflow: hidden;
+}
+
+.option-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.option-card:hover .option-image-container img {
+    transform: scale(1.1);
+}
+
+.option-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.option-content h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.option-duration {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+}
+
+.option-duration::before {
+    content: '⏱';
+    margin-right: 0.5rem;
 }
 
 @media (max-width: 768px) {
@@ -416,4 +455,11 @@ footer {
 /* Helper for initial state if needed */
 .hidden {
     display: none;
+}
+
+.modal-duration {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 1rem;
+    font-weight: 500;
 }
