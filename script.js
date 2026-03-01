@@ -3,7 +3,7 @@ const itineraryData = [
     { date: "2026-04-03", activity: "06:30 抵達米蘭", location: "米蘭" },
     { date: "2026-04-04", activity: "探索米蘭", location: "米蘭" },
     { date: "2026-04-05", activity: "06:20-08:52 米蘭前往提拉諾 (Tirano)\n10:06-12:35 提拉諾前往聖莫里茲 (St. Moritz)", location: "聖莫里茲", accommodation: "Chesa Languard" },
-    { date: "2026-04-06", activity: "16:16-18:39 聖莫里茲返回提拉諾\n19:08-21:40 提拉諾返回米蘭", location: "米蘭" },
+    { date: "2026-04-06", activity: "16:16-18:39 聖莫里茲返回提拉諾\n19:08-21:40 提拉諾返回米蘭", location: "聖莫里茲" },
     { date: "2026-04-07", activity: "一日遊：八選一 (建議前六個)", location: "米蘭" },
     { date: "2026-04-08", activity: "一日遊：八選一 (建議前六個)", location: "米蘭" },
     { date: "2026-04-09", activity: "7:15-9:42 米蘭前往威尼斯 (Venezia S.Lucia)\n18:18-20:45 威尼斯返回米蘭", location: "威尼斯" },
