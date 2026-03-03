@@ -210,6 +210,13 @@ section {
     color: #888;
 }
 
+.weekday {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-top: 2px;
+}
+
 .content-box {
     flex: 1;
 }

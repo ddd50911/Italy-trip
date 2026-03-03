@@ -1,6 +1,6 @@
 const itineraryData = [
     { date: "2026-04-02", activity: "SQ879 + SQ356 17:45 台北出發", location: "飛行中" },
-    { date: "2026-04-03", activity: "06:30 抵達米蘭", location: "米蘭" },
+    { date: "2026-04-03", activity: "06:30 抵達米蘭\n18:15 晚餐：Veramente (Via Palermo, 11)", location: "米蘭" },
     { date: "2026-04-04", activity: "探索米蘭", location: "米蘭" },
     { date: "2026-04-05", activity: "06:20-08:52 米蘭前往提拉諾 (Tirano)\n10:06-12:35 提拉諾前往聖莫里茲 (St. Moritz)", location: "聖莫里茲", accommodation: "Chesa Languard" },
     { date: "2026-04-06", activity: "16:16-18:39 聖莫里茲返回提拉諾\n19:08-21:40 提拉諾返回米蘭", location: "聖莫里茲" },
@@ -10,10 +10,10 @@ const itineraryData = [
     { date: "2026-04-10", activity: "一日遊：八選一 (建議前六個)", location: "米蘭" },
     { date: "2026-04-11", activity: "一日遊：八選一 (建議前六個)", location: "米蘭" },
     { date: "2026-04-12", activity: "一日遊：八選一 (建議前六個)", location: "米蘭" },
-    { date: "2026-04-13", activity: "Lari & Tuscany\n推薦行程：探索拉里 (Lari) 古城", location: "Lari 和托斯卡尼", accommodation: "Lari" },
+    { date: "2026-04-13", activity: "Lari搭乘火車前往佛羅倫斯：\nFrecciarossa 9515 (Milano Centrale 07:10 -> Firenze S.M.Novella 09:04)\n推薦行程：探索拉里 (Lari) 古城", location: "Lari 和托斯卡尼", accommodation: "Lari" },
     { date: "2026-04-14", activity: "Lari & Tuscany\n推薦行程：參觀維卡里城堡 (Castello dei Vicari) & 馬爾泰利義大利麵工廠", location: "Lari 和托斯卡尼", accommodation: "Lari" },
     { date: "2026-04-15", activity: "Lari & Tuscany\n推薦行程：托斯卡尼鄉間漫遊、沃爾泰拉 (Volterra) 或 聖吉米尼亞諾", location: "Lari 和托斯卡尼", accommodation: "Lari" },
-    { date: "2026-04-16", activity: "Lari & Tuscany\n推薦行程：卡夏納溫泉 (Casciana Terme) 放鬆身心", location: "Lari 和托斯卡尼", accommodation: "米蘭 (Milan)" },
+    { date: "2026-04-16", activity: "搭乘火車返回米蘭：\nFrecciaBianca 8620 (Pisa Centrale 16:46 -> Milano Centrale 20:40)\n推薦行程：卡夏納溫泉 (Casciana Terme) 放鬆身心", location: "Lari 和托斯卡尼", accommodation: "米蘭 (Milan)" },
     { date: "2026-04-17", activity: "Outlet 購物", location: "米蘭" },
     { date: "2026-04-18", activity: "SQ355+SQ871 12:30 米蘭出發", location: "飛行中" },
     { date: "2026-04-19", activity: "14:55 抵達台北", location: "甜蜜的家" }
@@ -200,6 +200,7 @@ const formatDate = (dateString, format = 'short') => {
     const date = new Date(dateString);
     if (format === 'day') return date.getDate();
     if (format === 'month') return (date.getMonth() + 1) + '月';
+    if (format === 'weekday') return date.toLocaleDateString('zh-TW', { weekday: 'short' });
     return date.toLocaleDateString('zh-TW');
 };
 
@@ -264,6 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="date-box">
                 <span class="day-num">${formatDate(item.date, 'day')}</span>
                 <span class="month">${formatDate(item.date, 'month')}</span>
+                <span class="weekday">${formatDate(item.date, 'weekday')}</span>
             </div>
             <div class="content-box">
                 <h4>${item.location}</h4>
