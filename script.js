@@ -10,7 +10,7 @@ const itineraryData = [
     { date: "2026-04-10", activity: "一日遊：八選一 (建議前六個)", location: "米蘭" },
     { date: "2026-04-11", activity: "一日遊：八選一 (建議前六個)", location: "米蘭" },
     { date: "2026-04-12", activity: "一日遊：八選一 (建議前六個)", location: "米蘭" },
-    { date: "2026-04-13", activity: "Lari搭乘火車前往佛羅倫斯：\nFrecciarossa 9515 (Milano Centrale 07:10 -> Firenze S.M.Novella 09:04)\n推薦行程：探索拉里 (Lari) 古城", location: "Lari 和托斯卡尼", accommodation: "Lari" },
+    { date: "2026-04-13", activity: "搭乘火車前往佛羅倫斯：\nFrecciarossa 9515 (Milano Centrale 07:10 -> Firenze S.M.Novella 09:04)\n推薦行程：探索拉里 (Lari) 古城", location: "Lari 和托斯卡尼", accommodation: "Lari" },
     { date: "2026-04-14", activity: "Lari & Tuscany\n推薦行程：參觀維卡里城堡 (Castello dei Vicari) & 馬爾泰利義大利麵工廠", location: "Lari 和托斯卡尼", accommodation: "Lari" },
     { date: "2026-04-15", activity: "Lari & Tuscany\n推薦行程：托斯卡尼鄉間漫遊、沃爾泰拉 (Volterra) 或 聖吉米尼亞諾", location: "Lari 和托斯卡尼", accommodation: "Lari" },
     { date: "2026-04-16", activity: "搭乘火車返回米蘭：\nFrecciaBianca 8620 (Pisa Centrale 16:46 -> Milano Centrale 20:40)\n推薦行程：卡夏納溫泉 (Casciana Terme) 放鬆身心", location: "Lari 和托斯卡尼", accommodation: "米蘭 (Milan)" },
@@ -67,8 +67,8 @@ const dayTripOptions = [
         description: `
             <p><strong>布雷西亞 (Brescia)</strong> 擁有義大利北部最大的羅馬遺址區，是一座歷史底蘊深厚的城市，也是重要的工業中心。</p>
             <ul>
-                <li><strong>交通：：</strong>從米蘭搭乘高鐵約 36 分鐘，區間車約 1 小時。</li>
-                <li><strong>亮點：：</strong>
+                <li><strong>交通：</strong>從米蘭搭乘高鐵約 36 分鐘，區間車約 1 小時。</li>
+                <li><strong>亮點：</strong>
                     <ul>
                         <li>參觀羅馬廣場 (Piazza del Foro) 和卡比托利歐神廟 (Capitolium)。</li>
                         <li>探索聖朱利亞博物館 (Santa Giulia Museum)，這是聯合國教科文組織世界遺產。</li>
@@ -86,15 +86,15 @@ const dayTripOptions = [
         description: `
             <p><strong>熱那亞 (Genova)</strong> 是義大利最大的海港，擁有迷宮般的窄巷 (Caruggi) 和宏偉的宮殿。這裡是哥倫布的故鄉，也是青醬 (Pesto) 的發源地。</p>
             <ul>
-                <li><strong>交通：：</strong>從米蘭搭乘 IC 火車約 1 小時 30 分鐘。</li>
-                <li><strong>亮點：：</strong>
+                <li><strong>交通：</strong>從米蘭搭乘 IC 火車約 1 小時 30 分鐘。</li>
+                <li><strong>亮點：</strong>
                     <ul>
                         <li>探索羅利宮殿體系 (Palazzi dei Rolli)，這些被列為世界遺產的豪宅。</li>
                         <li>參觀歐洲最大的水族館之一——熱那亞水族館。</li>
                         <li>在舊港 (Porto Antico) 漫步，感受海洋氣息。</li>
                     </ul>
                 </li>
-                <li><strong>美食：：</strong>務必嘗試正宗的熱那亞青醬義大利麵和佛卡夏 (Focaccia)。</li>
+                <li><strong>美食：</strong>務必嘗試正宗的熱那亞青醬義大利麵和佛卡夏 (Focaccia)。</li>
             </ul>
         `
     },
@@ -106,8 +106,8 @@ const dayTripOptions = [
         description: `
             <p><strong>都靈 (Torino)</strong> 是義大利統一後的第一個首都，以優雅的巴洛克建築、林蔭大道和壯麗的阿爾卑斯山背景而聞名。這裡也是菲亞特汽車和 Lavazza 咖啡的故鄉。</p>
             <ul>
-                <li><strong>交通：：</strong>從米蘭搭乘高鐵僅需 1 小時。</li>
-                <li><strong>亮點：：</strong>
+                <li><strong>交通：</strong>從米蘭搭乘高鐵僅需 1 小時。</li>
+                <li><strong>亮點：</strong>
                     <ul>
                         <li>參觀國家電影博物館，位於地標建築安托內利尖塔 (Mole Antonelliana) 內。</li>
                         <li>探索富麗堂皇的皇宮 (Royal Palace) 和埃及博物館 (Egyptian Museum)。</li>
@@ -125,15 +125,15 @@ const dayTripOptions = [
         description: `
             <p><strong>博洛尼亞 (Bologna)</strong> 被稱為「胖子之都」(La Grassa)，是義大利的美食中心。它還擁有世界上最古老的大學和獨特的紅色屋頂景觀。</p>
             <ul>
-                <li><strong>交通：：</strong>從米蘭搭乘高鐵約 1 小時。</li>
-                <li><strong>亮點：：</strong>
+                <li><strong>交通：</strong>從米蘭搭乘高鐵約 1 小時.</li>
+                <li><strong>亮點：</strong>
                     <ul>
                         <li>登上阿西內利塔 (Asinelli Tower)，俯瞰紅色城市。</li>
                         <li>漫步於馬喬列廣場 (Piazza Maggiore) 和海神噴泉。</li>
                         <li>探索無盡的拱廊 (Porticoes)，總長超過 40 公里。</li>
                     </ul>
                 </li>
-                <li><strong>美食：：</strong>肉醬義大利麵 (Tagliatelle al Ragù) 是必吃美食。</li>
+                <li><strong>美食：</strong>肉醬義大利麵 (Tagliatelle al Ragù) 是必吃美食。</li>
             </ul>
         `
     },
@@ -145,8 +145,8 @@ const dayTripOptions = [
         description: `
             <p><strong>克雷莫納 (Cremona)</strong> 是世界著名的小提琴之都，斯特拉迪瓦里 (Stradivari) 等製琴大師皆誕生於此。</p>
             <ul>
-                <li><strong>交通：：</strong>從米蘭搭乘火車約 1 小時 10 分鐘。</li>
-                <li><strong>亮點：：</strong>
+                <li><strong>交通：</strong>從米蘭搭乘火車約 1 小時 10 分鐘。</li>
+                <li><strong>亮點：</strong>
                     <ul>
                         <li>參觀小提琴博物館 (Violin Museum)，欣賞價值連城的名琴。</li>
                         <li>攀登義大利最高的磚砌鐘樓——托拉佐鐘樓 (Torrazzo)。</li>
@@ -164,8 +164,8 @@ const dayTripOptions = [
         description: `
             <p><strong>帕維亞 (Pavia)</strong> 曾是倫巴第王國的首都，擁有一座歷史悠久的大學和著名的修道院。</p>
             <ul>
-                <li><strong>交通：：</strong>從米蘭搭乘火車約 30 分鐘。</li>
-                <li><strong>亮點：：</strong>
+                <li><strong>交通：</strong>從米蘭搭乘火車約 30 分鐘。</li>
+                <li><strong>亮點：</strong>
                     <ul>
                         <li>參觀著名的帕維亞修道院 (Certosa di Pavia)，這是文藝復興建築的傑作（位於市區以北）。</li>
                         <li>走過提契諾河上的廊橋 (Ponte Coperto)。</li>
@@ -183,8 +183,8 @@ const dayTripOptions = [
         description: `
             <p><strong>維羅納 (Verona)</strong> 是羅密歐與茱麗葉的故鄉，以其保存完好的羅馬圓形競技場而聞名，是一座充滿浪漫氣息的城市。</p>
             <ul>
-                <li><strong>交通：：</strong>從米蘭搭乘高鐵約 1 小時 13 分鐘。</li>
-                <li><strong>亮點：：</strong>
+                <li><strong>交通：</strong>從米蘭搭乘高鐵約 1 小時 13 分鐘。</li>
+                <li><strong>亮點：</strong>
                     <ul>
                         <li>參觀維羅納圓形競技場 (Arena di Verona)，如果季節合適，還能欣賞歌劇。</li>
                         <li>在茱麗葉之家 (Juliet's House) 尋找陽台和雕像。</li>
