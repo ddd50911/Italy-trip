@@ -10,6 +10,13 @@
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
     --spacing-container: 1200px;
+    --nav-height: 70px;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 * {
@@ -24,6 +31,7 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
+    padding-top: var(--nav-height);
 }
 
 /* Typography */
@@ -53,16 +61,63 @@ h4 {
     animation: fadeInUp 1s ease-out forwards;
 }
 
-.delay-1 {
-    animation-delay: 0.2s;
+.delay-4 {
+    animation-delay: 0.8s;
 }
 
-.delay-2 {
-    animation-delay: 0.4s;
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
 }
 
-.delay-3 {
-    animation-delay: 0.6s;
+.nav-container {
+    width: 100%;
+    max-width: var(--spacing-container);
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
 }
 
 /* Hero Section */
@@ -116,6 +171,42 @@ h4 {
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
     background: rgba(0, 0, 0, 0.3);
+    margin-top: 2rem;
+}
+
+/* Countdown */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 1rem;
+    border-radius: 12px;
+    min-width: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.countdown-item span {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+}
+
+.countdown-item label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
 }
 
 .scroll-indicator {
@@ -238,9 +329,37 @@ section {
 }
 
 .accommodation::before {
-    content: '🏠';
-    /* Simple icon content */
+    content: '🏨';
+    /* More premium icon */
     margin-right: 0.5rem;
+}
+
+/* Map Section */
+.map-section {
+    margin-bottom: 6rem;
+}
+
+.map-section h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+/* Glass Effect for Cards */
+.timeline-item,
+.card,
+.option-card {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
 }
 
 /* Destinations */

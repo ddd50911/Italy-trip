@@ -211,6 +211,63 @@ const getAccommodation = (item) => {
     return "米蘭住宿 (Home in Milan)";
 };
 
+// Countdown Logic
+const countdownDate = new Date("2026-04-02T17:45:00").getTime();
+
+const updateCountdown = () => {
+    const now = new Date().getTime();
+    const distance = countdownDate - now;
+
+    if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "旅程已開始！";
+        return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    document.getElementById("days").innerText = String(days).padStart(2, '0');
+    document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+    document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+};
+
+// Map Logic
+const locations = [
+    { name: "Milan (米蘭)", coords: [45.4642, 9.1900], type: "base" },
+    { name: "Tirano (提拉諾)", coords: [46.2155, 10.1741], type: "transit" },
+    { name: "St. Moritz (聖莫里茲)", coords: [46.4908, 9.8355], type: "stay" },
+    { name: "Venice (威尼斯)", coords: [45.4408, 12.3155], type: "visit" },
+    { name: "Lari (拉里)", coords: [43.5658, 10.5925], type: "stay" }
+];
+
+const initMap = () => {
+    const map = L.map('map').setView([45.0, 10.5], 7);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 20
+    }).addTo(map);
+
+    locations.forEach(loc => {
+        const marker = L.circleMarker(loc.coords, {
+            radius: 8,
+            fillColor: loc.type === "stay" ? "#d4af37" : "#1a2b3c",
+            color: "#fff",
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 0.8
+        }).addTo(map);
+
+        marker.bindPopup(`<b>${loc.name}</b>`);
+    });
+
+    // Draw lines between points to show route
+    const route = locations.map(loc => loc.coords);
+    L.polyline(route, { color: '#d4af37', weight: 2, dashArray: '5, 10', opacity: 0.6 }).addTo(map);
+};
+
 // Modal Logic
 const modalOverlay = document.getElementById('modal-overlay');
 const modalTitle = document.getElementById('modal-title');
@@ -249,6 +306,11 @@ modalOverlay.addEventListener('click', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     const timelineContainer = document.getElementById('itinerary-list');
     const optionsContainer = document.getElementById('options-list');
+
+    // Initialize map and countdown
+    initMap();
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
 
     // Render Itinerary
     itineraryData.forEach((item, index) => {
