@@ -49,7 +49,7 @@ const dayTripOptions = [
             <p><strong>科莫湖 (Lake Como)</strong> 是義大利最著名的湖泊之一，以其壯麗的阿爾卑斯山景緻和豪華別墅而聞名。這裡是遠離城市喧囂、享受寧靜的絕佳去處。</p>
             <ul>
                 <li><strong>交通：</strong>從米蘭 Cadorna 或中央車站搭乘火車約 30-60 分鐘。</li>
-                <li><strong>亮點：：</strong>
+                <li><strong>亮點：</strong>
                     <ul>
                         <li>搭乘遊船遊覽湖上風光，欣賞貝拉焦 (Bellagio) 和瓦倫納 (Varenna) 等如畫的小鎮。</li>
                         <li>參觀科莫大教堂 (Duomo di Como)。</li>
@@ -323,6 +323,8 @@ document.addEventListener('DOMContentLoaded', () => {
             ? `<div class="accommodation">${accommodation}</div>`
             : '';
 
+        const activityHtml = item.activity.replace("一日遊：", '<a href="#options-section" class="scroll-link">一日遊：</a>');
+
         div.innerHTML = `
             <div class="date-box">
                 <span class="day-num">${formatDate(item.date, 'day')}</span>
@@ -331,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div class="content-box">
                 <h4>${item.location}</h4>
-                <p style="white-space: pre-line">${item.activity}</p>
+                <p style="white-space: pre-line">${activityHtml}</p>
                 ${accommodationHtml}
             </div>
         `;
