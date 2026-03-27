@@ -5,7 +5,7 @@ const itineraryData = [
     { date: "2026-04-05", activity: "06:20-08:52 米蘭前往提拉諾 (Tirano)\n10:06-12:35 提拉諾前往聖莫里茲 (St. Moritz)", location: "聖莫里茲", accommodation: "Chesa Languard" },
     { date: "2026-04-06", activity: "16:16-18:39 聖莫里茲返回提拉諾\n19:08-21:40 提拉諾返回米蘭", location: "聖莫里茲" },
     { date: "2026-04-07", activity: "一日遊：八選一 (建議前六個)", location: "米蘭" },
-    { date: "2026-04-08", activity: "一日遊：八選一 (建議前六個)", location: "米蘭" },
+    { date: "2026-04-08", activity: "Outlet 購物", location: "米蘭" },
     { date: "2026-04-09", activity: "7:15-9:42 米蘭前往威尼斯 (Venezia S.Lucia)\n18:18-20:45 威尼斯返回米蘭", location: "威尼斯" },
     { date: "2026-04-10", activity: "一日遊：八選一 (建議前六個)", location: "米蘭" },
     { date: "2026-04-11", activity: "一日遊：八選一 (建議前六個)", location: "米蘭" },
@@ -14,7 +14,7 @@ const itineraryData = [
     { date: "2026-04-14", activity: "Lari & Tuscany\n推薦行程：參觀維卡里城堡 (Castello dei Vicari) & 馬爾泰利義大利麵工廠", location: "Lari 和托斯卡尼", accommodation: "Lari" },
     { date: "2026-04-15", activity: "Lari & Tuscany\n推薦行程：托斯卡尼鄉間漫遊、沃爾泰拉 (Volterra) 或 聖吉米尼亞諾", location: "Lari 和托斯卡尼", accommodation: "Lari" },
     { date: "2026-04-16", activity: "搭乘火車返回米蘭：\nFrecciaBianca 8620 (Pisa Centrale 16:46 -> Milano Centrale 20:40)\n推薦行程：卡夏納溫泉 (Casciana Terme) 放鬆身心", location: "Lari 和托斯卡尼", accommodation: "米蘭 (Milan)" },
-    { date: "2026-04-17", activity: "Outlet 購物", location: "米蘭" },
+    { date: "2026-04-17", activity: "一日遊：八選一 (建議前六個)", location: "米蘭" },
     { date: "2026-04-18", activity: "SQ355+SQ871 12:30 米蘭出發", location: "飛行中" },
     { date: "2026-04-19", activity: "14:55 抵達台北", location: "甜蜜的家" }
 ];
